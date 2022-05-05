@@ -1,0 +1,61 @@
+body {
+    background: url(../img/bg2.jpg);
+    background-size: cover;
+    font-family: 'Trirong', serif;
+}
+
+.countdown-container {
+    background-color:rgb(240, 240, 240);
+    height: 50vh;
+    width: 50vw;
+    border-radius: 5px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.countdown-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.countdown-content > h1 {
+    font-size: 3rem;
+}
+
+.countdown-content > p {
+    font-size: 1.5rem;
+}
+
+.countdown-content > span {
+    font-size: 10rem;
+}
+
+.countdown-content > button {
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 40px;
+    background-color: rgb(130, 146, 231);
+    color: white;
+    font-family: 'Trirong', serif;
+}
+
+.countdown-content > button:hover {
+    background-color: rgb(190, 201, 255);
+}
+
+.countdown-content > button:active {
+    background-color: rgb(130, 146, 231);
+}
+
+.hidden {
+    display: none;
+}
