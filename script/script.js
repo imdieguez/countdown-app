@@ -1,17 +1,36 @@
 
-let startingMinutes = 20;
-let time = startingMinutes * 60;
-let timeEl = document.querySelector('#time-el')
+let startingMinutes = 2;
+let time = startingMinutes * 1;
+let firstTimeEl = document.querySelector('#first-time-el')
+let secondTimeEl = document.querySelector('#second-time-el')
 let startEl = document.querySelector('#start-el')
+let paragraphEl = document.querySelector('#paragraph-el')
+let modalContainer = document.querySelector('.modal-container')
 
-startEl.addEventListener('click', function countDown() {
+function firstCountDown() {
     let minutes = Math.floor(time/60);
     let seconds = time % 60; 
 
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
-    timeEl.innerHTML = `${minutes} : ${seconds}`
+    firstTimeEl.innerHTML = `${minutes} : ${seconds}`
+    secondTimeEl.innerHTML = `${minutes} : ${seconds}`
     time--;
-    startEl.classList.add('hidden')
-    setInterval(countDown, 1000);  
+    startEl.classList.add('hidden') 
+    if(time <= -1) {
+        secondCountDown()
+    }
+}
+
+function secondCountDown() {
+    startingMinutes = 1;
+    time = startingMinutes * 20;
+    modalContainer.classList.add('show')
+
+    firstCountDown()
+}
+
+startEl.addEventListener('click', function() {
+    firstCountDown()
+    setInterval(firstCountDown, 1000); 
 })

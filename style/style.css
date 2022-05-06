@@ -59,3 +59,44 @@ body {
 .hidden {
     display: none;
 }
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: rgb(120, 133, 199);
+    width:45%;
+    height:45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.modal > span {
+    margin-top: 20px;
+    font-size: 9rem;
+}
+
+.modal > p {
+    font-size: 2rem;
+    text-align: center;
+    margin: 30px 40px 0 40px;
+}
